@@ -170,7 +170,7 @@ function mailgun_admin_settings_submit($form, &$form_state) {
  *
  * @return array $form
  */
-function mailgun_test_form($form, &$form_state) {
+function mailgun_test_form(&$form_state) {
   drupal_set_title(t('Send test email'));
 
   $form['mailgun_test_address'] = array(
