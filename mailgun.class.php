@@ -5,7 +5,7 @@ class MailGun_Exception extends Exception {
 
 class MailGun {
   //const API_VERSION = '1.0';
-  const END_POINT = 'https://api.mailgun.net/v2/yhmyt.mailgun.org';//'https://mailgunapp.com/api/';
+  const END_POINT = 'https://api.mailgun.net/v2/';//'https://mailgunapp.com/api/';
 
   var $api;
 
