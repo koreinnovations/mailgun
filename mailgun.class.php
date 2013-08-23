@@ -140,7 +140,7 @@ class MailGun {
     }
     else {
       $message = isset($body['message']) ? $body['message'] : '';
-      throw new MailGun_Exception($message . ' - ' . $body, $response_code);
+      throw new MailGun_Exception($message . ' - ' . $body . ' - ' . $response_code, $response_code);
     }
   }
 
