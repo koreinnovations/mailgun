@@ -218,12 +218,8 @@ function mailgun_test_form_submit($form, &$form_state) {
   global $language;
   $params['subject'] = t('Drupal mailgun test email');
   $params['body'] = $form_state['values']['mailgun_test_body'];
-  $params['include_attachment'] = $form_state['values']['include_attachment'];
 	$from = variable_get('mailgun_from', '');
-	//dsm($params);
-	//dsm($from);
   $result = drupal_mail('mailgun', 'mailgun-test', $test_address, $language, $params, $from);
-	//dsm($result);
   if (isset($result['result']) && $result['result'] === true) {
     drupal_set_message(t('A test email has been sent to @email.', array('@email' => $test_address)));
   }
