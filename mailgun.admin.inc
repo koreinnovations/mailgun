@@ -11,7 +11,7 @@
  * @return
  *   An array containing form items to place on the module settings page.
  */
-function mailgun_admin_settings($form, &$form_state) {
+function mailgun_admin_settings(&$form_state) {
   $key = variable_get('mailgun_api_key');
   $form['mailgun_api_key'] = array(
     '#title' => t('mailgun API Key'),
@@ -176,7 +176,7 @@ function mailgun_test_form($form, &$form_state) {
   $form['mailgun_test_address'] = array(
     '#type' => 'textfield',
     '#title' => t('Email address to send a test email to'),
-    '#default_value' => 'rebol@126.com',//variable_get('site_mail', ''),
+    '#default_value' => variable_get('site_mail', ''),
     '#description' => t('Type in an address to have a test email sent there.'),
     '#required' => TRUE
   );
@@ -197,9 +197,8 @@ function mailgun_test_form($form, &$form_state) {
     '#value' => t('Send test email'),
   );
   $form['test_cancel'] = array(
-    '#type' => 'link',
-    '#href' => 'admin/config/services/mailgun',
-    '#title' => t('Cancel'),
+    '#type' => 'markup',
+    '#value' => l(t('Cancel'), 'admin/settings/services/mailgun'),
   );
 
   return $form;

@@ -44,7 +44,7 @@ class MailGunMailSystem implements MailSystemInterface {
       drupal_set_message(t('mailgun can\'t send email. Please !link.',
         array(
           '!link' => l('add a verified from address',
-            'admin/config/services/mailgun'
+            'admin/settings/services/mailgun'
           )
         )
       ), 'error');
@@ -153,7 +153,7 @@ class TestingMailGunMailSystem extends MailGunMailSystem implements MailSystemIn
       drupal_set_message(t('mailgun can\'t send email. Please !link.',
         array(
           '!link' => l('add a verified from address',
-            'admin/config/services/mailchimp/sts'
+            'admin/settings/services/mailchimp/sts'
           )
         )
       ), 'error');
